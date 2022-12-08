@@ -24,7 +24,7 @@ EspMQTTClient mqtt(
   "mqtt.server.com",    // MQTT Broker server ip
   "MQTTUsername",       // Can be omitted if not needed
   "MQTTPassword",       // Can be omitted if not needed
-  "EverblueCyble",      // Client name that uniquely identify your device
+  "watermeter2mqtt",      // Client name that uniquely identify your device
   1883                  // MQTT Broker server port
 );
 
@@ -120,7 +120,7 @@ String jsonDiscoveryDevice1(
   \"14071984\" ],\
   \"name\": \"Compteur Eau\",\
   \"model\": \"Everblu Cyble ESP8266/ESP32\",\
-  \"manufacturer\": \"Psykokwak\",\
+  \"manufacturer\": \"Itron\",\
   \"suggested_area\": \"Home\"}\
 }");
 
@@ -141,7 +141,7 @@ String jsonDiscoveryDevice2(
   \"14071984\" ],\
   \"name\": \"Compteur Eau\",\
   \"model\": \"Everblu Cyble ESP8266/ESP32\",\
-  \"manufacturer\": \"Psykokwak\",\
+  \"manufacturer\": \"Itron\",\
   \"suggested_area\": \"Home\"}\
 }");
 
@@ -159,7 +159,7 @@ String jsonDiscoveryDevice3(
   \"14071984\" ],\
   \"name\": \"Compteur Eau\",\
   \"model\": \"Everblu Cyble ESP8266/ESP32\",\
-  \"manufacturer\": \"Psykokwak\",\
+  \"manufacturer\": \"Itron\",\
   \"suggested_area\": \"Home\"}\
 }");
 
@@ -178,7 +178,7 @@ String jsonDiscoveryDevice4(
   \"14071984\" ],\
   \"name\": \"Compteur Eau\",\
   \"model\": \"Everblu Cyble ESP8266/ESP32\",\
-  \"manufacturer\": \"Psykokwak\",\
+  \"manufacturer\": \"Itron\",\
   \"suggested_area\": \"Home\"}\
 }");
 
