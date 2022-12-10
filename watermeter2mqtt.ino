@@ -24,7 +24,7 @@ EspMQTTClient mqtt(
   "mqtt.server.com",    // MQTT Broker server ip
   "MQTTUsername",       // Can be omitted if not needed
   "MQTTPassword",       // Can be omitted if not needed
-  "EverbluCyble",      // Client wifi name that uniquely identify your device
+  "WaterMeter",      // Client wifi name that uniquely identify your device
   1883                  // MQTT Broker server port
 );
 
