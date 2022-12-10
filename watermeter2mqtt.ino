@@ -24,7 +24,7 @@ EspMQTTClient mqtt(
   "mqtt.server.com",    // MQTT Broker server ip
   "MQTTUsername",       // Can be omitted if not needed
   "MQTTPassword",       // Can be omitted if not needed
-  "watermeter2mqtt",      // Client name that uniquely identify your device
+  "EverbluCyble",      // Client wifi name that uniquely identify your device
   1883                  // MQTT Broker server port
 );
 
@@ -119,9 +119,8 @@ String jsonDiscoveryDevice1(
   \"identifiers\" : [\
   \"14071984\" ],\
   \"name\": \"Compteur Eau\",\
-  \"model\": \"Everblu Cyble ESP8266/ESP32\",\
-  \"manufacturer\": \"Itron\",\
-  \"suggested_area\": \"Home\"}\
+  \"model\": \"Everblu Cyble Enhanced v2\",\
+  \"manufacturer\": \"Itron\"}\
 }");
 
 String jsonDiscoveryDevice2(
@@ -140,9 +139,8 @@ String jsonDiscoveryDevice2(
   \"identifiers\" : [\
   \"14071984\" ],\
   \"name\": \"Compteur Eau\",\
-  \"model\": \"Everblu Cyble ESP8266/ESP32\",\
-  \"manufacturer\": \"Itron\",\
-  \"suggested_area\": \"Home\"}\
+  \"model\": \"Everblu Cyble Enhanced v2\",\
+  \"manufacturer\": \"Itron\"}\
 }");
 
 String jsonDiscoveryDevice3(
@@ -158,9 +156,8 @@ String jsonDiscoveryDevice3(
   \"identifiers\" : [\
   \"14071984\" ],\
   \"name\": \"Compteur Eau\",\
-  \"model\": \"Everblu Cyble ESP8266/ESP32\",\
-  \"manufacturer\": \"Itron\",\
-  \"suggested_area\": \"Home\"}\
+  \"model\": \"Everblu Cyble Enhanced v2\",\
+  \"manufacturer\": \"Itron\"}\
 }");
 
 String jsonDiscoveryDevice4(
@@ -177,9 +174,8 @@ String jsonDiscoveryDevice4(
   \"identifiers\" : [\
   \"14071984\" ],\
   \"name\": \"Compteur Eau\",\
-  \"model\": \"Everblu Cyble ESP8266/ESP32\",\
-  \"manufacturer\": \"Itron\",\
-  \"suggested_area\": \"Home\"}\
+  \"model\": \"Everblu Cyble Enhanced v2\",\
+  \"manufacturer\": \"Itron\"}\
 }");
 
 void onConnectionEstablished()
