@@ -107,11 +107,11 @@ void onScheduled()
 
 String jsonDiscoveryDevice1(
 "{ \
-  \"name\": \"Compteur Eau Index\", \
+  \"name\": \"Everblu Conso\", \
   \"unique_id\": \"water_meter_value\",\
   \"object_id\": \"water_meter_value\",\
   \"icon\": \"mdi:water\",\
-  \"unit_of_measurement\": \"Litres\",\
+  \"unit_of_measurement\": \"L\",\
   \"qos\": \"0\",\
   \"state_topic\": \"everblu/cyble/liters\",\
   \"force_update\": \"true\",\
@@ -125,7 +125,7 @@ String jsonDiscoveryDevice1(
 
 String jsonDiscoveryDevice2(
 "{ \
-  \"name\": \"Compteur Eau Batterie\", \
+  \"name\": \"Everblu Battery\", \
   \"unique_id\": \"water_meter_battery\",\
   \"object_id\": \"water_meter_battery\",\
   \"device_class\": \"battery\",\
@@ -145,7 +145,7 @@ String jsonDiscoveryDevice2(
 
 String jsonDiscoveryDevice3(
 "{ \
-  \"name\": \"Compteur Eau Compteur\", \
+  \"name\": \"Everblu Counter\", \
   \"unique_id\": \"water_meter_counter\",\
   \"object_id\": \"water_meter_counter\",\
   \"icon\": \"mdi:counter\",\
@@ -162,7 +162,7 @@ String jsonDiscoveryDevice3(
 
 String jsonDiscoveryDevice4(
   "{ \
-  \"name\": \"Compteur Eau Timestamp\", \
+  \"name\": \"Everblu Timestamp\", \
   \"unique_id\": \"water_meter_timestamp\",\
   \"object_id\": \"water_meter_timestamp\",\
   \"device_class\": \"timestamp\",\
