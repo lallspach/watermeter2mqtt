@@ -96,7 +96,7 @@ uint8_t debug_out = 0;
 #define SPI_CSK  PIN_SPI_SCK // example replace by 14 for d1 mini pro
 #define SPI_MISO PIN_SPI_MISO // example replace by 12 for d1 mini pro
 #define SPI_MOSI PIN_SPI_MOSI // example replace by 13 for d1 mini pro
-#define SPI_SS   PIN_SPI_SS // example replace by 15 for d1 mini pro
+#define SPI_SS   PIN_SPI_SS // example replace by 15 for d1 mini pro SS or CS pin
 #endif
 
 // Change these define according to your ESP32 board
