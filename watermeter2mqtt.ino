@@ -85,8 +85,8 @@ void onScheduled()
   struct tm *ptm = gmtime(&tnow);
 
 
-  // At 10:00:00am UTC
-  if (ptm->tm_hour == 10 && ptm->tm_min == 0 && ptm->tm_sec == 0) {
+  // At 14:00 UTC
+  if (ptm->tm_hour == 14 && ptm->tm_min == 0 && ptm->tm_sec == 0) {
 
     // Call back in 23 hours
     mqtt.executeDelayed(1000 * 60 * 60 * 23, onScheduled);
