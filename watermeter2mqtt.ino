@@ -107,25 +107,28 @@ void onScheduled()
 
 String jsonDiscoveryDevice1(
 "{ \
-  \"name\": \"Everblu Conso\", \
+  \"name\": \"Water Meter Index\", \
   \"unique_id\": \"water_meter_value\",\
   \"object_id\": \"water_meter_value\",\
   \"icon\": \"mdi:water\",\
+  \"state\": \"{{ states(sensor.water_meter_value)|float / 1 }}\",\
   \"unit_of_measurement\": \"L\",\
+  \"device_class\": \"water\",\
+  \"state_class\": \"total_increasing\",\
   \"qos\": \"0\",\
   \"state_topic\": \"everblu/cyble/liters\",\
   \"force_update\": \"true\",\
   \"device\" : {\
   \"identifiers\" : [\
   \"14071984\" ],\
-  \"name\": \"Compteur Eau\",\
+  \"name\": \"Water Meter\",\
   \"model\": \"Everblu Cyble Enhanced v2\",\
   \"manufacturer\": \"Itron\"}\
 }");
 
 String jsonDiscoveryDevice2(
 "{ \
-  \"name\": \"Everblu Battery\", \
+  \"name\": \"Water Meter Battery\", \
   \"unique_id\": \"water_meter_battery\",\
   \"object_id\": \"water_meter_battery\",\
   \"device_class\": \"battery\",\
@@ -138,14 +141,14 @@ String jsonDiscoveryDevice2(
   \"device\" : {\
   \"identifiers\" : [\
   \"14071984\" ],\
-  \"name\": \"Compteur Eau\",\
+  \"name\": \"Water Meter\",\
   \"model\": \"Everblu Cyble Enhanced v2\",\
   \"manufacturer\": \"Itron\"}\
 }");
 
 String jsonDiscoveryDevice3(
 "{ \
-  \"name\": \"Everblu Counter\", \
+  \"name\": \"Water Meter Counter\", \
   \"unique_id\": \"water_meter_counter\",\
   \"object_id\": \"water_meter_counter\",\
   \"icon\": \"mdi:counter\",\
@@ -155,14 +158,14 @@ String jsonDiscoveryDevice3(
   \"device\" : {\
   \"identifiers\" : [\
   \"14071984\" ],\
-  \"name\": \"Compteur Eau\",\
+  \"name\": \"Water Meter\",\
   \"model\": \"Everblu Cyble Enhanced v2\",\
   \"manufacturer\": \"Itron\"}\
 }");
 
 String jsonDiscoveryDevice4(
   "{ \
-  \"name\": \"Everblu Timestamp\", \
+  \"name\": \"Water Meter Timestamp\", \
   \"unique_id\": \"water_meter_timestamp\",\
   \"object_id\": \"water_meter_timestamp\",\
   \"device_class\": \"timestamp\",\
@@ -173,7 +176,7 @@ String jsonDiscoveryDevice4(
   \"device\" : {\
   \"identifiers\" : [\
   \"14071984\" ],\
-  \"name\": \"Compteur Eau\",\
+  \"name\": \"Water Meter\",\
   \"model\": \"Everblu Cyble Enhanced v2\",\
   \"manufacturer\": \"Itron\"}\
 }");
