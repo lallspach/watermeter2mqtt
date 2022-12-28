@@ -25,6 +25,9 @@ EspMQTTClient mqtt(
   "MQTTUsername",       // mqtt username Can be omitted if not needed
   "MQTTPassword",       // mqtt pass Can be omitted if not needed
   "watermeter2mqtt",      // Client name that uniquely identify your device
+  "MQTTUsername",       // Can be omitted if not needed
+  "MQTTPassword",       // Can be omitted if not needed
+  "WaterMeter",      // Client wifi name that uniquely identify your device
   1883                  // MQTT Broker server port
 );
 
@@ -85,8 +88,8 @@ void onScheduled()
   struct tm *ptm = gmtime(&tnow);
 
 
-  // At 10:00:00am UTC
-  if (ptm->tm_hour == 10 && ptm->tm_min == 0 && ptm->tm_sec == 0) {
+  // At 14:00 UTC
+  if (ptm->tm_hour == 14 && ptm->tm_min == 0 && ptm->tm_sec == 0) {
 
     // Call back in 23 hours
     mqtt.executeDelayed(1000 * 60 * 60 * 23, onScheduled);
@@ -107,26 +110,28 @@ void onScheduled()
 
 String jsonDiscoveryDevice1(
 "{ \
-  \"name\": \"Compteur Eau Index\", \
+  \"name\": \"Water Meter Index\", \
   \"unique_id\": \"water_meter_value\",\
   \"object_id\": \"water_meter_value\",\
   \"icon\": \"mdi:water\",\
-  \"unit_of_measurement\": \"Litres\",\
+  \"state\": \"{{ states(sensor.water_meter_value)|float / 1 }}\",\
+  \"unit_of_measurement\": \"L\",\
+  \"device_class\": \"water\",\
+  \"state_class\": \"total_increasing\",\
   \"qos\": \"0\",\
   \"state_topic\": \"everblu/cyble/liters\",\
   \"force_update\": \"true\",\
   \"device\" : {\
   \"identifiers\" : [\
   \"14071984\" ],\
-  \"name\": \"Compteur Eau\",\
-  \"model\": \"Everblu Cyble ESP8266/ESP32\",\
-  \"manufacturer\": \"Itron\",\
-  \"suggested_area\": \"Home\"}\
+  \"name\": \"Water Meter\",\
+  \"model\": \"Everblu Cyble Enhanced v2\",\
+  \"manufacturer\": \"Itron\"}\
 }");
 
 String jsonDiscoveryDevice2(
 "{ \
-  \"name\": \"Compteur Eau Batterie\", \
+  \"name\": \"Water Meter Battery\", \
   \"unique_id\": \"water_meter_battery\",\
   \"object_id\": \"water_meter_battery\",\
   \"device_class\": \"battery\",\
@@ -139,15 +144,14 @@ String jsonDiscoveryDevice2(
   \"device\" : {\
   \"identifiers\" : [\
   \"14071984\" ],\
-  \"name\": \"Compteur Eau\",\
-  \"model\": \"Everblu Cyble ESP8266/ESP32\",\
-  \"manufacturer\": \"Itron\",\
-  \"suggested_area\": \"Home\"}\
+  \"name\": \"Water Meter\",\
+  \"model\": \"Everblu Cyble Enhanced v2\",\
+  \"manufacturer\": \"Itron\"}\
 }");
 
 String jsonDiscoveryDevice3(
 "{ \
-  \"name\": \"Compteur Eau Compteur\", \
+  \"name\": \"Water Meter Counter\", \
   \"unique_id\": \"water_meter_counter\",\
   \"object_id\": \"water_meter_counter\",\
   \"icon\": \"mdi:counter\",\
@@ -157,15 +161,14 @@ String jsonDiscoveryDevice3(
   \"device\" : {\
   \"identifiers\" : [\
   \"14071984\" ],\
-  \"name\": \"Compteur Eau\",\
-  \"model\": \"Everblu Cyble ESP8266/ESP32\",\
-  \"manufacturer\": \"Itron\",\
-  \"suggested_area\": \"Home\"}\
+  \"name\": \"Water Meter\",\
+  \"model\": \"Everblu Cyble Enhanced v2\",\
+  \"manufacturer\": \"Itron\"}\
 }");
 
 String jsonDiscoveryDevice4(
   "{ \
-  \"name\": \"Compteur Eau Timestamp\", \
+  \"name\": \"Water Meter Timestamp\", \
   \"unique_id\": \"water_meter_timestamp\",\
   \"object_id\": \"water_meter_timestamp\",\
   \"device_class\": \"timestamp\",\
@@ -176,10 +179,9 @@ String jsonDiscoveryDevice4(
   \"device\" : {\
   \"identifiers\" : [\
   \"14071984\" ],\
-  \"name\": \"Compteur Eau\",\
-  \"model\": \"Everblu Cyble ESP8266/ESP32\",\
-  \"manufacturer\": \"Itron\",\
-  \"suggested_area\": \"Home\"}\
+  \"name\": \"Water Meter\",\
+  \"model\": \"Everblu Cyble Enhanced v2\",\
+  \"manufacturer\": \"Itron\"}\
 }");
 
 void onConnectionEstablished()
