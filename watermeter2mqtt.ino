@@ -78,7 +78,7 @@ void onUpdateData()
 }
 
 
-// This function calls onUpdateData() every days at 10:00am UTC
+// This function calls onUpdateData() every days at 14:00pm UTC
 void onScheduled()
 {
   time_t tnow = time(nullptr);
