@@ -22,8 +22,8 @@ EspMQTTClient mqtt(
   "MyESSID",            // Your Wifi SSID
   "MyWiFiKey",          // Your WiFi key
   "mqtt.server.com",    // MQTT Broker server ip
-  "MQTTUsername",       // Can be omitted if not needed
-  "MQTTPassword",       // Can be omitted if not needed
+  "MQTTUsername",       // mqtt username Can be omitted if not needed
+  "MQTTPassword",       // mqtt pass Can be omitted if not needed
   "watermeter2mqtt",      // Client name that uniquely identify your device
   1883                  // MQTT Broker server port
 );
@@ -255,7 +255,9 @@ void onConnectionEstablished()
   mqtt.publish("homeassistant/sensor/water_meter_timestamp/config", jsonDiscoveryDevice4, true);
   delay(50); // Do not remove
 
-  onScheduled();
+// Note: on scheduled allows you to read the information once a day, onUpdateData allows you to read each time information changes
+ // onScheduled();
+  onUpdateData();
 }
 
 void setup()
