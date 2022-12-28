@@ -24,10 +24,7 @@ EspMQTTClient mqtt(
   "mqtt.server.com",    // MQTT Broker server ip
   "MQTTUsername",       // mqtt username Can be omitted if not needed
   "MQTTPassword",       // mqtt pass Can be omitted if not needed
-  "watermeter2mqtt",      // Client name that uniquely identify your device
-  "MQTTUsername",       // Can be omitted if not needed
-  "MQTTPassword",       // Can be omitted if not needed
-  "WaterMeter",      // Client wifi name that uniquely identify your device
+  "watermeter2mqtt",    // Client name that uniquely identify your device
   1883                  // MQTT Broker server port
 );
 
