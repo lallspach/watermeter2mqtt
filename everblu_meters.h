@@ -52,12 +52,12 @@ typedef unsigned char T_BOOL;       //1 octets
 
 // Change these define according to your hardware
 
-#define FREQUENCY 433.8683f
+#define FREQUENCY 433.7605f
 
 #define GDO0 5 //header  11 
 
-#define METER_YEAR              15
-#define METER_SERIAL            886451
+#define METER_YEAR              22
+#define METER_SERIAL            770953
 
 
 

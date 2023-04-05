@@ -19,11 +19,11 @@
 
 
 EspMQTTClient mqtt(
-  "MyESSID",            // Your Wifi SSID
-  "MyWiFiKey",          // Your WiFi key
-  "mqtt.server.com",    // MQTT Broker server ip
-  "MQTTUsername",       // mqtt username Can be omitted if not needed
-  "MQTTPassword",       // mqtt pass Can be omitted if not needed
+  "myiotnet",            // Your Wifi SSID
+  "obernai32!",          // Your WiFi key
+  "192.168.5.3",    // MQTT Broker server ip
+  "",       // mqtt username Can be omitted if not needed
+  "",       // mqtt pass Can be omitted if not needed
   "watermeter2mqtt",    // Client name that uniquely identify your device
   1883                  // MQTT Broker server port
 );
@@ -53,13 +53,13 @@ void onUpdateData()
     Serial.println("Unable to retrieve data from meter. Retry later...");
 
     // Call back this function in 10 sec (in miliseconds)
-    if (_retry++ < 10)
-      mqtt.executeDelayed(1000 * 10, onUpdateData);
+    if (_retry++ < 20)
+      mqtt.executeDelayed(1000 * 30, onUpdateData);
 
     return;
   }
 
-  digitalWrite(LED_BUILTIN, LOW); // turned on
+  // digitalWrite(LED_BUILTIN, LOW); // turned on
 
   Serial.printf("Liters : %d\nBattery (in months) : %d\nCounter : %d\n\n", meter_data.liters, meter_data.battery_left, meter_data.reads_counter);
 
@@ -186,7 +186,7 @@ void onConnectionEstablished()
   Serial.println("Connected to MQTT Broker :)");
 
   Serial.println("> Configure time from NTP server.");
-  configTzTime("UTC0", "pool.ntp.org");
+  configTzTime("CET-1CEST-2,M3.5.0/02:00:00,M10.5.0/03:00:00", "pool.ntp.org");
 
 
 
@@ -255,8 +255,8 @@ void onConnectionEstablished()
   delay(50); // Do not remove
 
 // Note: on scheduled allows you to read the information once a day, onUpdateData allows you to read each time information changes
- // onScheduled();
-  onUpdateData();
+  onScheduled();
+  // onUpdateData();
 }
 
 void setup()
@@ -268,11 +268,12 @@ void setup()
   digitalWrite(LED_BUILTIN, HIGH); // turned off
 
   mqtt.setMaxPacketSize(1024);
-  //mqtt.enableDebuggingMessages(true);
+  // mqtt.enableDebuggingMessages(true);
 
-  /*
+  
   // Use this piece of code to find the right frequency.
-  for (float i = 433.76f; i < 433.890f; i += 0.0005f) {
+  /*
+  for (float i = 433.76000f; i < 433.89000f; i += 0.00050f) {
     Serial.printf("Test frequency : %f\n", i);
     cc1101_init(i);
 
